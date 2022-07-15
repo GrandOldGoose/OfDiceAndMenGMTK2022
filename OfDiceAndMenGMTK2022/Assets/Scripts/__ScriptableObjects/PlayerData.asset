@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13aa084811b45e541a95fb76f885b397, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  Physics_NoFriction: {fileID: 0}
+  Physics_FullFriction: {fileID: 0}
+  CollisionHandler_GroundCheckDistance: 3
+  CollisionHandler_LateGroundCheckDistance: 3
+  CollisionHandler_TopCheckDistance: 3
+  CollisionHandler_FrontCheckDistance: 3
+  DamageAndAffectHandler_MaxHealth: 100
+  DamageAndAffectHandler_FallDamage: 10
+  DamageAndAffectHandler_SpawnWait: 1
+  EnemyDetectionHandler_Radius: 100
+  EnemyDetectionHandler_CheckRate: 0.5
+  OnGroundMove_MoveSpeed: 80
+  OnGroundMove_MovementSmoothing: 0.05
+  OnGroundJump_JumpForce: 1000
+  OnGroundJump_JumpWaitTime: 1
+  OnGroundJump_MovingPlatformScaleCoeffient: 1
+  OnGroundJump_JumpFXAnim: {fileID: 0}
+  OnGroundThoughFloor_ForceDownThroughFloor: 100
+  InAirMove_TerminalVelocity: 100
+  InAirMove_MoveSpeed: 80
+  InAirMove_MovementSmoothing: 0.05
+  InAirJump_DoubleJumpForce: 1000
+  InAirJump_DoubleJumpWaitTime: 1
+  InAirJump_DoubleJumpCount: 2
+  InAirJump_DoubleJumpFXAnim: {fileID: 0}
+  InAirGravLiftState_WaitBetweenNextGravLift: 1
+  PlayerProjectile_ShotSpawn: {x: 0, y: 0}
+  PlayerProjectile_ProjectileSpeed: 60
+  PlayerProjectile_ProjectileDamage: 5
+  PlayerProjectile_ProjectileLifetime: 3
+  PlayerProjectile_FireRate: 3
