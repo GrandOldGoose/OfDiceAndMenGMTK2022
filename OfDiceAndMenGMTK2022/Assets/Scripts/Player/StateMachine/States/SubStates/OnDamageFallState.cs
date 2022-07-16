@@ -56,8 +56,7 @@ namespace PlayerStateMachineNamespace
 
             _rigidbody2D.velocity = Vector2.zero;
             _rigidbody2D.isKinematic = true;
-            //turn hit box off.
-            _playerCollisionHandler.DisableAllColiders();
+            _playerCollisionHandler.CollisionCollider.enabled = false;
         }
 
         public override void OnExit()

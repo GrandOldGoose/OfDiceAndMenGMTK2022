@@ -15,13 +15,13 @@ public class PlayerProjectileSpawner : MonoBehaviour
 
     #region Fields
     PlayerData _playerData;
-    private ObjectPool<PlayerProjectile> _playerProjectilePool;
+    private ObjectPool<Projectile> _playerProjectilePool;
     #endregion
 
 
 
     #region Properties
-    public ObjectPool<PlayerProjectile> PlayerProjectilePool { get => _playerProjectilePool; }
+    public ObjectPool<Projectile> PlayerProjectilePool { get => _playerProjectilePool; }
     public Transform ShotSpawn { get => _shotSpawn; }
     #endregion
 
@@ -32,7 +32,7 @@ public class PlayerProjectileSpawner : MonoBehaviour
     {
         _playerData = GetComponent<Player>().PlayerData;
 
-        _playerProjectilePool = new ObjectPool<PlayerProjectile>(CreatePlayerProjectilePrefab, OnTakeProjectileFromPool, OnReturnProjectileToPool, OnDestroyProjectile, false, 30);
+        _playerProjectilePool = new ObjectPool<Projectile>(CreatePlayerProjectilePrefab, OnTakeProjectileFromPool, OnReturnProjectileToPool, OnDestroyProjectile, false, 30);
     }
     #endregion
 
@@ -40,16 +40,16 @@ public class PlayerProjectileSpawner : MonoBehaviour
 
     #region Private Methods
     //need differnt Create Projectile Method For Each Projectile:
-    private PlayerProjectile CreatePlayerProjectilePrefab()
+    private Projectile CreatePlayerProjectilePrefab()
     {
-        PlayerProjectile projectile = Instantiate(_playerProjectilePrefab, _playerData.PlayerProjectile_ShotSpawn, Quaternion.Euler(0f, 0f, 0f));
+        Projectile projectile = Instantiate(_playerProjectilePrefab, _playerData.PlayerProjectile_ShotSpawn, Quaternion.Euler(0f, 0f, 0f));
         projectile.gameObject.SetActive(false);
         projectile.SetPool(_playerProjectilePool);
 
         return projectile;
     }
 
-    private void OnTakeProjectileFromPool(PlayerProjectile projectile)
+    private void OnTakeProjectileFromPool(Projectile projectile)
     {
         projectile.gameObject.SetActive(true);
         projectile.transform.position = _shotSpawn.position;
@@ -57,12 +57,12 @@ public class PlayerProjectileSpawner : MonoBehaviour
         projectile.Fire();
     }
 
-    private void OnReturnProjectileToPool(PlayerProjectile projectile)
+    private void OnReturnProjectileToPool(Projectile projectile)
     {
         projectile.gameObject.SetActive(false);
     }
 
-    private void OnDestroyProjectile(PlayerProjectile projectile)
+    private void OnDestroyProjectile(Projectile projectile)
     {
         Destroy(projectile.gameObject);
     }

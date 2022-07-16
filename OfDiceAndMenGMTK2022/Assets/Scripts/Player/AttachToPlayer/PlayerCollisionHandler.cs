@@ -11,16 +11,11 @@ public class PlayerCollisionHandler : MonoBehaviour
     private LayerMask _ground, _slimGround, _movingGround;
     private RaycastHit2D _slimGroundHit;
     private Collider2D _slimFloorCollider = null;
-
-    private bool _gravLiftContact = false;
-    private Vector2 _gravLiftForceApplied = Vector2.zero;
     #endregion
 
 
 
     #region Properties
-    public bool GravLiftContact { get => _gravLiftContact; set => _gravLiftContact = value; }
-    public Vector2 GravLiftForceApplied { get => _gravLiftForceApplied; }
     public CapsuleCollider2D CollisionCollider { get => _collisionCollider; }
     #endregion
 

@@ -52,6 +52,8 @@ namespace PlayerStateMachineNamespace
             Debug.Log("Entered " + _animator.GetLayerName(0) + "." + this.ToString().Remove(0, 28));
             _animator.Play(_animator.GetLayerName(0) + "." + this.ToString().Remove(0, 28), 0);
 
+            _playerInputHandler.SetInputsFalse();
+
             _playerDamageAndAffectHandler.CanBeDamaged = false;
         }
 

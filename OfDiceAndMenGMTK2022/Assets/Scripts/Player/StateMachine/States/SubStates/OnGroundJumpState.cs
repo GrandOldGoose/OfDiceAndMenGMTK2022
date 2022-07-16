@@ -62,7 +62,7 @@ namespace PlayerStateMachineNamespace
                 //check for moving ground
                 if (rayHit.transform.gameObject.layer == 15)
                 {
-                    GameObject jumpFx = _player.InstantiateObjectWithRef(_playerData.OnGroundJump_JumpFXAnim, _transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
+                    GameObject jumpFx = _player.InstantiateObjectWithRef(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
                     jumpFx.transform.parent = rayHit.transform;
 
                     _player.transform.parent = null;
@@ -79,7 +79,7 @@ namespace PlayerStateMachineNamespace
                 }
                 else
                 {
-                    _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
+                    _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
 
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0.0f);
                     Jump();
@@ -90,7 +90,7 @@ namespace PlayerStateMachineNamespace
                 //check for moving ground
                 if (rayHitLate.transform.gameObject.layer == 15)
                 {
-                    GameObject jumpFx = _player.InstantiateObjectWithRef(_playerData.OnGroundJump_JumpFXAnim, _transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
+                    GameObject jumpFx = _player.InstantiateObjectWithRef(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
                     jumpFx.transform.parent = rayHitLate.transform;
 
                     _player.transform.parent = null;
@@ -107,7 +107,7 @@ namespace PlayerStateMachineNamespace
                 }
                 else
                 {
-                    _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
+                    _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
 
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0.0f);
                     Jump();

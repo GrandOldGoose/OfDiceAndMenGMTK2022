@@ -24,40 +24,39 @@ public class PlayerInputHandler : MonoBehaviour
     #endregion
 
 
+    #region Public Methods
+    public void SetInputsFalse()
+    {
+        _jumpInput = false;
+        _fireInput = false;
+    }
+    #endregion
+
+
     #region Unity Event Callers
     public void OnMoveInput(InputAction.CallbackContext context)
     {
-        /*
         if (!PauseMenu.GameIsPaused)
         {
-        */
-            _rawMoveInput = Mathf.RoundToInt(context.ReadValue<float>());
-        /*
+        _rawMoveInput = Mathf.RoundToInt(context.ReadValue<float>());
         }
-        */
     }
 
     public void OnJumpInput(InputAction.CallbackContext context)
     {
-        /*
         if (!PauseMenu.GameIsPaused)
         {
-        */
             if (context.started)
             {
                 _jumpInput = true;
             }
-            /*
         }
-            */
     }
 
     public void OnFallThroughFloorInput(InputAction.CallbackContext context)
     {
-        /*
         if (!PauseMenu.GameIsPaused)
         {
-        */
             if (context.performed)
             {
                 _fallThroughFloorInput = true;
@@ -66,9 +65,18 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 _fallThroughFloorInput = false;
             }
-            /*
         }
-            */
+    }
+
+    public void OnFireInput(InputAction.CallbackContext context)
+    {
+        if (!PauseMenu.GameIsPaused)
+        {
+            if (context.started)
+            {
+                _fireInput = true;
+            }
+        }
     }
     #endregion
 }

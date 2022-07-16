@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDamageAndAffectHandler : MonoBehaviour, IRespawnable, IDamageable, IKnockbackable, IHittable, IHealthPackable
+public class PlayerDamageAndAffectHandler : MonoBehaviour, IRespawnable, IDamageable, IKnockbackable, IHittable, IGravLiftable, IHealthPackable
 {
     #region Editor Fields
     [SerializeField] private CapsuleCollider2D _hitBox;
@@ -28,6 +28,11 @@ public class PlayerDamageAndAffectHandler : MonoBehaviour, IRespawnable, IDamage
     private bool _canBeDamaged = true;
     private bool _isDamaged = false;
 
+    private bool _gravLiftContact = false;
+    private Vector2 _gravLiftForceApplied = Vector2.zero;
+
+    private bool _initialRoll = false;
+    private bool _isInRoll = false;
     private bool _intialKnockback = false;
     private bool _isKnockedback = false;
     private Vector2 _knockbackForce = Vector2.zero;
@@ -36,14 +41,24 @@ public class PlayerDamageAndAffectHandler : MonoBehaviour, IRespawnable, IDamage
 
 
     #region Properties
+    public CapsuleCollider2D HitBox { get => _hitBox;}
+
     public bool InitialDeath { get => _initialDeath; set => _initialDeath = value; }
     public bool IsDead { get => _isDead; set => _isDead = value; }
     public DamageType DamageType { get => _damageType; }
+
     public bool IsRespawnning { get => _isRespawnning; set => _isRespawnning = value; }
     public Transform RespawnPoint { get => _respawnPoint; set => _respawnPoint = value; }
     public bool IsInSpawnWait { get => _isInSpawnWait; set => _isInSpawnWait = value; }
+
     public bool CanBeDamaged { set => _canBeDamaged = value; }
     public bool IsDamaged { get => _isDamaged; set => _isDamaged = value; }
+
+    public bool GravLiftContact { get => _gravLiftContact; set => _gravLiftContact = value; }
+    public Vector2 GravLiftForceApplied { get => _gravLiftForceApplied; }
+
+    public bool InitialRoll { get => _initialRoll; set => _initialRoll = value; }
+    public bool IsInRoll { get => _isInRoll; set => _isInRoll = value; }
     public bool InitialKnockback { get => _intialKnockback; set => _intialKnockback = value; }
     public bool IsKnockedback { get => _isKnockedback; set => _isKnockedback = value; }
     public Vector2 KnockbackForce { get => _knockbackForce; }
@@ -88,7 +103,6 @@ public class PlayerDamageAndAffectHandler : MonoBehaviour, IRespawnable, IDamage
                 case DamageType.ENEMY:
                     _damageType = DamageType.ENEMY;
                     break;
-                    break;
                 case DamageType.FALL:
                     _damageType = DamageType.FALL;
                     break;
@@ -122,12 +136,21 @@ public class PlayerDamageAndAffectHandler : MonoBehaviour, IRespawnable, IDamage
         _knockbackForce = force;
         _intialKnockback = true;
     }
+
+    public void ApplyGravForce(Vector2 gravForce)
+    {
+        _gravLiftContact = true;
+        _gravLiftForceApplied = gravForce;
+    }
+
     public void AddHealth(int amount)
     {
         _currentHealth += amount;
         if (_currentHealth > _playerData.DamageAndAffectHandler_MaxHealth) { _currentHealth = _playerData.DamageAndAffectHandler_MaxHealth; }
         _playerUIHandler.SetUIHealth(_currentHealth);
     }
+
+
     #endregion
 }
 

@@ -53,15 +53,15 @@ namespace PlayerStateMachineNamespace
             _animator.Play(_animator.GetLayerName(0) + "." + this.ToString().Remove(0, 28), 0);
 
 
+            _playerInputHandler.SetInputsFalse();
+
             _playerDamageAndAffectHandler.InitialDeath = false;
             _playerDamageAndAffectHandler.IsDead = true;
 
             _rigidbody2D.velocity = Vector2.zero;
             _rigidbody2D.isKinematic = true;
 
-
-            //turn hit box off.
-            _playerCollisionHandler.DisableAllColiders();
+            _playerCollisionHandler.CollisionCollider.enabled = false;
             _playerDamageAndAffectHandler.CanBeDamaged = false;
         }
 

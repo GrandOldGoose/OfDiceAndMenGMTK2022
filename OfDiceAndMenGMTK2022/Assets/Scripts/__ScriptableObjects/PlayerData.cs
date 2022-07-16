@@ -61,9 +61,9 @@ public class PlayerData : ScriptableObject
 	public int InAirJump_DoubleJumpCount = 2; 
 	public GameObject InAirJump_DoubleJumpFXAnim;
 
-	[Header("InAirGravLiftState")]
+	[Header("InAirOnGravLiftState")]
 	[Space]
-	public float InAirGravLiftState_WaitBetweenNextGravLift = 1f;
+	public float InAirOnGravLiftState_WaitBetweenNextGravLift = 1f;
 
 	[Header("OnRollRollState")]
 	[Space]

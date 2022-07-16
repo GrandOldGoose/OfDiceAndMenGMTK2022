@@ -77,7 +77,7 @@ namespace PlayerStateMachineNamespace
         private void AddForceToPlayer()
         {
             _rigidbody2D.velocity = Vector2.zero;
-            _rigidbody2D.AddForce(new Vector2(_playerCollisionHandler.GravLiftForceApplied.x, _playerCollisionHandler.GravLiftForceApplied.y));
+            _rigidbody2D.AddForce(new Vector2(_playerDamageAndAffectHandler.GravLiftForceApplied.x, _playerDamageAndAffectHandler.GravLiftForceApplied.y));
         }
         #endregion
     }
