@@ -17,7 +17,7 @@ public class HealthPack : MonoBehaviour
     #region Collision Callback Methods
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Lead"))
+        if (collision.CompareTag("Player"))
         {
             IHealthPackable healthPackable = collision.gameObject.GetComponent<IHealthPackable>();
             if (healthPackable != null) { healthPackable.AddHealth(_healAmount); }

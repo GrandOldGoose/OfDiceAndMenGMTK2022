@@ -332,7 +332,7 @@ MonoBehaviour:
   - {fileID: 1905763276216404494}
   _ledgeCornerPositions: []
   _waitTime: 0.6
-  _speed: 20
+  _speed: 2
   _turnAround: 0
   _waitAtEachPoint: 1
 --- !u!1 &9057570831627359737

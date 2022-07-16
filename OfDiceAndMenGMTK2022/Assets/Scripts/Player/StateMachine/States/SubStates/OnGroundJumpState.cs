@@ -60,10 +60,13 @@ namespace PlayerStateMachineNamespace
             if (rayHit)
             {
                 //check for moving ground
-                if (rayHit.transform.gameObject.layer == 15)
+                if (rayHit.transform.gameObject.layer == 9)
                 {
-                    GameObject jumpFx = _player.InstantiateObjectWithRef(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
-                    jumpFx.transform.parent = rayHit.transform;
+                    if (_playerData.OnGroundJump_JumpFXAnim != null)
+                    {
+                        GameObject jumpFx = _player.InstantiateObjectWithRef(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
+                        jumpFx.transform.parent = rayHit.transform;
+                    }
 
                     _player.transform.parent = null;
                     _player.GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Interpolate;
@@ -79,7 +82,7 @@ namespace PlayerStateMachineNamespace
                 }
                 else
                 {
-                    _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
+                    if (_playerData.OnGroundJump_JumpFXAnim != null) { _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f)); }
 
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0.0f);
                     Jump();
@@ -88,10 +91,13 @@ namespace PlayerStateMachineNamespace
             else if (rayHitLate)
             {
                 //check for moving ground
-                if (rayHitLate.transform.gameObject.layer == 15)
+                if (rayHitLate.transform.gameObject.layer == 9)
                 {
-                    GameObject jumpFx = _player.InstantiateObjectWithRef(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
-                    jumpFx.transform.parent = rayHitLate.transform;
+                    if (_playerData.OnGroundJump_JumpFXAnim != null)
+                    {
+                        GameObject jumpFx = _player.InstantiateObjectWithRef(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
+                        jumpFx.transform.parent = rayHitLate.transform;
+                    }
 
                     _player.transform.parent = null;
                     _player.GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Interpolate;
@@ -107,7 +113,7 @@ namespace PlayerStateMachineNamespace
                 }
                 else
                 {
-                    _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f));
+                    if (_playerData.OnGroundJump_JumpFXAnim != null) { _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f)); }
 
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0.0f);
                     Jump();

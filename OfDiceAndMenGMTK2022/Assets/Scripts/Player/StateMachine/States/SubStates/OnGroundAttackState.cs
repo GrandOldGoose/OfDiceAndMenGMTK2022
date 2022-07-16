@@ -53,6 +53,8 @@ namespace PlayerStateMachineNamespace
         public override void OnEnter()
         {
             base.OnEnter();
+
+            _playerProjectileSpawner.PlayerProjectilePool.Get();
         }
 
         public override void OnExit()

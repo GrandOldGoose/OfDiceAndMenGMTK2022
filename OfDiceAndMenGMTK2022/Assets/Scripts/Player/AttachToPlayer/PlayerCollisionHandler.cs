@@ -40,7 +40,7 @@ public class PlayerCollisionHandler : MonoBehaviour
     //detectors:
     public RaycastHit2D DetectGroundContact()
     {
-        return RayCastForContactWithMask(new Vector2(0.0f, -4f), -transform.up, _playerData.CollisionHandler_GroundCheckDistance, _ground | _slimGround | _movingGround);
+        return RayCastForContactWithMask(new Vector2(0.0f, 0.0f), -transform.up, _playerData.CollisionHandler_GroundCheckDistance, _ground | _slimGround | _movingGround);
     }
     public RaycastHit2D DetectLateGroundContact()
     {
@@ -48,11 +48,11 @@ public class PlayerCollisionHandler : MonoBehaviour
     }
     public RaycastHit2D DetectFrontContact()
     {
-        return RayCastForContactWithMask(new Vector2(0.0f, -2.0f), transform.right, _playerData.CollisionHandler_FrontCheckDistance, _ground | _movingGround);
+        return RayCastForContactWithMask(new Vector2(0.0f, 0.0f), transform.right, _playerData.CollisionHandler_FrontCheckDistance, _ground | _movingGround);
     }
     public bool DetectTopContact()
     {
-        return RayCastForContactWithMask(new Vector2(0.0f, -3.5f), transform.up, _playerData.CollisionHandler_TopCheckDistance, _ground | _movingGround);
+        return RayCastForContactWithMask(new Vector2(0.0f, 0.0f), transform.up, _playerData.CollisionHandler_TopCheckDistance, _ground | _movingGround);
     }
     public bool DetectSlimGroundContact()
     {

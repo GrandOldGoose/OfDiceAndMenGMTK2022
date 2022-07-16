@@ -12,34 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13aa084811b45e541a95fb76f885b397, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  Physics_NoFriction: {fileID: 0}
-  Physics_FullFriction: {fileID: 0}
-  CollisionHandler_GroundCheckDistance: 3
-  CollisionHandler_LateGroundCheckDistance: 3
-  CollisionHandler_TopCheckDistance: 3
-  CollisionHandler_FrontCheckDistance: 3
-  DamageAndAffectHandler_MaxHealth: 100
-  DamageAndAffectHandler_FallDamage: 10
+  Physics_NoFriction: {fileID: 6200000, guid: a7b3f84cbb626c842ad22e9641e6cecc, type: 2}
+  Physics_FullFriction: {fileID: 6200000, guid: cdfb24f7d32635b49b6d5a7977c06e81, type: 2}
+  CollisionHandler_GroundCheckDistance: 0.7
+  CollisionHandler_LateGroundCheckDistance: 0.5
+  CollisionHandler_TopCheckDistance: 0.5
+  CollisionHandler_FrontCheckDistance: 0.5
+  DamageAndAffectHandler_MaxHealth: 6
+  DamageAndAffectHandler_FallDamage: 1
   DamageAndAffectHandler_SpawnWait: 1
-  EnemyDetectionHandler_Radius: 100
+  EnemyDetectionHandler_Radius: 5
   EnemyDetectionHandler_CheckRate: 0.5
-  OnGroundMove_MoveSpeed: 80
+  OnGroundMove_MoveSpeed: 10
   OnGroundMove_MovementSmoothing: 0.05
-  OnGroundJump_JumpForce: 1000
+  OnGroundJump_JumpForce: 450
   OnGroundJump_JumpWaitTime: 1
   OnGroundJump_MovingPlatformScaleCoeffient: 1
   OnGroundJump_JumpFXAnim: {fileID: 0}
   OnGroundThoughFloor_ForceDownThroughFloor: 100
-  InAirMove_TerminalVelocity: 100
-  InAirMove_MoveSpeed: 80
+  InAirMove_TerminalVelocity: 15
+  InAirMove_MoveSpeed: 10
   InAirMove_MovementSmoothing: 0.05
-  InAirJump_DoubleJumpForce: 1000
+  InAirJump_DoubleJumpForce: 600
   InAirJump_DoubleJumpWaitTime: 1
   InAirJump_DoubleJumpCount: 2
   InAirJump_DoubleJumpFXAnim: {fileID: 0}
-  InAirGravLiftState_WaitBetweenNextGravLift: 1
+  InAirOnGravLiftState_WaitBetweenNextGravLift: 1
+  OnRollRollState_ForceApplied: {x: 100, y: 100}
   PlayerProjectile_ShotSpawn: {x: 0, y: 0}
-  PlayerProjectile_ProjectileSpeed: 60
+  PlayerProjectile_ProjectileSpeed: 15
   PlayerProjectile_ProjectileDamage: 5
   PlayerProjectile_ProjectileLifetime: 3
   PlayerProjectile_FireRate: 3

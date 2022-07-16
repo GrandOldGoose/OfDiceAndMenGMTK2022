@@ -53,7 +53,8 @@ namespace PlayerStateMachineNamespace
         public override void OnEnter()
         {
             base.OnEnter();
-            _player.InstantiateObject(_playerData.InAirJump_DoubleJumpFXAnim, _player.transform.position, Quaternion.identity);
+            if (_playerData.InAirJump_DoubleJumpFXAnim != null) { _player.InstantiateObject(_playerData.InAirJump_DoubleJumpFXAnim, _player.transform.position, Quaternion.identity); }
+            
             --_player.DoubleJumpCount;
             DoubleJump();
         }

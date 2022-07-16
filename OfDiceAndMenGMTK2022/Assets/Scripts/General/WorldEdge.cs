@@ -14,7 +14,7 @@ public class WorldEdge : MonoBehaviour
     #region Collision Callbacks
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Lead"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             int whichRespawnPointIsClosed = FindClosestSpawnPoint(collision);
 

@@ -9,6 +9,9 @@ TagManager:
   - MovingGround
   - PlayerProjectile
   - EnemyProjectile
+  - EnemyDetecionCollider
+  - Enemy
+  - PlayerHitBox
   layers:
   - Default
   - TransparentFX
@@ -22,9 +25,9 @@ TagManager:
   - MovingGround
   - PlayerProjectile
   - EnemyProjectile
-  - 
-  - 
-  - 
+  - PlayerHitBox
+  - EnemyDetecionCollider
+  - Enemy
   - 
   - 
   - 
