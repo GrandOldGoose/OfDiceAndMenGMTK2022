@@ -71,7 +71,8 @@ public class PlayerData : ScriptableObject
 
 	[Header("OnRollRollState")]
 	[Space]
-	public Vector2 OnRollRollState_ForceApplied = new Vector2(1000f, 1000f);
+	public Vector2 OnRollRollState_RNGForceApplied = new Vector2(1000f, 1000f);
+	public Vector2 OnRollRollState_RNGRollTime = new Vector2(0.5f, 5f);
 
 	[Header("PlayerProjectile")]
 	[Space]

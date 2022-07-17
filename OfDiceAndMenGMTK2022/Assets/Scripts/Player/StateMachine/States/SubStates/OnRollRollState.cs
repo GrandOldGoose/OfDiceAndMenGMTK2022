@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,13 @@ namespace PlayerStateMachineNamespace
 {
     public class OnRollRollState : OnRollSuperState
     {
+
+        #region Events
+        public static event Action OnRollEnter;
+        #endregion
+
+
+
         #region Fields
         private readonly Player _player;
         private readonly PlayerData _playerData;
@@ -16,6 +24,8 @@ namespace PlayerStateMachineNamespace
         private readonly PlayerProjectileSpawner _playerProjectileSpawner;
         private readonly Rigidbody2D _rigidbody2D;
         private readonly Animator _animator;
+
+        private bool _initialGroundContact = true;
         #endregion
 
 
@@ -43,6 +53,20 @@ namespace PlayerStateMachineNamespace
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+
+            if (_playerCollisionHandler.DetectGroundContact())
+            {
+                _initialGroundContact = false;
+                if (!_player.CanRollLand)
+                {
+
+                    _rigidbody2D.AddForce(new Vector2(UnityEngine.Random.Range(-_playerData.OnRollRollState_RNGForceApplied.x, _playerData.OnRollRollState_RNGForceApplied.x), _playerData.OnRollRollState_RNGForceApplied.y));
+                }
+            }
+            else
+            {
+                _initialGroundContact = true;
+            }
         }
 
         public override void PhysicsUpdate()
@@ -53,24 +77,22 @@ namespace PlayerStateMachineNamespace
         public override void OnEnter()
         {
             base.OnEnter();
-            //roll anim below instead
-            // _player.InstantiateObject(_playerData.InAirJump_DoubleJumpFXAnim, _transform.position, Quaternion.identity);
-            _player.DoubleJumpCount = _playerData.InAirJump_DoubleJumpCount;
+
+            _rigidbody2D.velocity = Vector2.zero;
+            _playerDamageAndAffectHandler.IsKnockedback = true;
+            _playerDamageAndAffectHandler.InitialKnockback = false;
+            _rigidbody2D.AddForce(_playerDamageAndAffectHandler.KnockbackForce);
+
+            _player.CanRollLand = false;
+            _player.DoubleJumpCount = 0;
+            OnRollEnter?.Invoke();
         }
 
         public override void OnExit()
         {
             base.OnExit();
-        }
-        #endregion
 
-
-
-        #region Private Methods
-        private void DoubleJump() // Add a one time vertical force to the player.
-        {
-            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0f);
-            _rigidbody2D.AddForce(_playerData.OnRollRollState_ForceApplied);
+            _playerDamageAndAffectHandler.IsKnockedback = false;
         }
         #endregion
     }

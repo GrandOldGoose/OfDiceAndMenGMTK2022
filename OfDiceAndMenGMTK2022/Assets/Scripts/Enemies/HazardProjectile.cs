@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class HazardProjectile : Projectile
+public class HazardProjectile : Projectile, IDamageable
 {
     #region Editor Fields
     [SerializeField] private float _projectileSpeed;
@@ -56,6 +56,16 @@ public class HazardProjectile : Projectile
         _projectileRigidbody.velocity = Vector2.zero;
         if (_pool != null) { _pool.Release(this); }
         else Destroy(this.gameObject);
+    }
+    #endregion
+
+
+
+    #region Public Interface Methods
+
+    public void TakeDamage(int damageAmount, DamageType damageType)
+    {
+        DisableProjectile();
     }
     #endregion
 

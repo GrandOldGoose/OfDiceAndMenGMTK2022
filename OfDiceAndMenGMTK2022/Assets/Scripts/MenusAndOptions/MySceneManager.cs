@@ -12,12 +12,12 @@ public class MySceneManager : MonoBehaviour
 
 
     #region Public Vars
-    public string MainMenuScene;
     public string NeverUnloadScene;
     public string Scene1;
     public string Scene2;
     public string Scene3;
-    public string CurrentScene = null;
+    public string Scene4;
+    public string Scene5;
     #endregion
 
 
@@ -31,8 +31,7 @@ public class MySceneManager : MonoBehaviour
         else
         {
             _instance = this;
-            SceneManager.LoadSceneAsync(MainMenuScene, LoadSceneMode.Additive);
-            CurrentScene = MainMenuScene;
+            SceneManager.LoadSceneAsync(Scene1, LoadSceneMode.Additive);
         }
     }
     #endregion
@@ -44,16 +43,13 @@ public class MySceneManager : MonoBehaviour
 
     public void LoadNewScene(string newScene, bool setPlayerUp, bool disablePlayer)
     {
-        if (disablePlayer) { DisablePlayer(); }
-        SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
-        UnloadScene(CurrentScene);
-        CurrentScene = newScene;
-        if (setPlayerUp) { SetUpPlayer(); }
+        if (!SceneManager.GetSceneByName(newScene).isLoaded) { SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive); Debug.Log("Load: " + newScene); }
+        //if (setPlayerUp) { SetUpPlayer(); }
     }
 
     public void UnloadScene(string scene)
     {
-        StartCoroutine(Unload(scene));
+        if (SceneManager.GetSceneByName(scene).isLoaded) { StartCoroutine(Unload(scene)); Debug.Log("Unload: " + scene); }
     }
     #endregion
 
@@ -67,12 +63,15 @@ public class MySceneManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(scene);
     }
 
+    /*
     private void SetUpPlayer()
     {
         GameManager.Instance.PlayerGameObject.SetActive(true);
         GameManager.Instance.InGameUI.SetActive(true);
     }
+    */
 
+    /*
     private void DisablePlayer()
     {
         var playerGameObject = GameManager.Instance.PlayerGameObject;
@@ -81,5 +80,6 @@ public class MySceneManager : MonoBehaviour
         GameManager.Instance.PlayerGameObject.SetActive(false);
         GameManager.Instance.InGameUI.SetActive(false);
     }
+    */
     #endregion
 }

@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     private int _doubleJumpCount = 0;
     private float _previousInputDirection = 0f;
 
+    private bool _canRollLand = true;
     private bool _canGravLift = true;
     private bool _canFire = false;
     #endregion
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
     public int DoubleJumpCount { get => _doubleJumpCount; set => _doubleJumpCount = value; }
     public float PreviousInputDirection { set => _previousInputDirection = value; }
 
+    public bool CanRollLand { get => _canRollLand; set => _canRollLand = value; }
     public bool CanFire { get => _canFire; set => _canFire = value; }
     public bool CanGravLift { set => _canGravLift = value; }
     #endregion
@@ -63,6 +65,9 @@ public class Player : MonoBehaviour
 
         Action SpawnWaitTime() => () => Invoke("WaitToSpawn", _playerData.DamageAndAffectHandler_SpawnWait);
         OnSpawnWaitState.OnSpawnWait += SpawnWaitTime();
+
+        Action RollWaitTime() => () => Invoke("WaitToStopRoll", UnityEngine.Random.Range(_playerData.OnRollRollState_RNGRollTime.x, _playerData.OnRollRollState_RNGRollTime.y));
+        OnRollRollState.OnRollEnter += RollWaitTime();
 
         //Create instances of state machine.
         _playerStateMachine = new StateMachine();
@@ -129,7 +134,7 @@ public class Player : MonoBehaviour
         //SuperState Transitions.
         PMAT(onGroundSuperState, inAirMoveState, InAirAndAnimIsCompletedOrAnimIsLooping());
         PMAT(inAirSuperState, onGroundLandState, HitGround());
-        PMAT(onRollRollState, onGroundIdleState, AnimCompleted());
+        PMAT(onRollRollState, onGroundIdleState, HitGroundAndRollCanLand());
         PMAT(onDeathSuperState, onSpawnInitialIdleState, AnimCompleted());
         //OnGround SubState Transitions.
         PMAT(onGroundIdleState, onGroundMoveState, MoveInput());
@@ -163,12 +168,12 @@ public class Player : MonoBehaviour
         PMAT(onSpawnInitialState, inAirMoveState, AnimCompleted());
         //Set transitions that come from any transition:
         PMAAT(inAirOnGravLiftState, OnGravLiftContactAndCanGravLiftAndNotDeadOrKnockbackOrRoll());
-        PMAAT(onRollRollState, RollTriggerAndNotDeadOrKnockbackOrRoll());
-        PMAAT(onDamageRollState, OnKnockbackAndNotDeadOrKnockbackOrRoll());
-        PMAAT(onDamageFallState, OnFallAndNotDead());
-        PMAAT(onDeathRollState, OnDeathAndMeleeDamageAndNotDeadOrKnockbackOrRoll());
-        PMAAT(onDeathFallState, OnDeathAndFallDamageAndNotDead());
-        PMAAT(onDeathSpikesState, OnDeathAndSpikeDamageAndNotDeadOrKnockbackOrRoll());
+        PMAAT(onRollRollState, OnKnockbackAndNotDeadOrKnockbackOrRoll());
+        //PMAAT(onDamageRollState, OnKnockbackAndNotDeadOrKnockbackOrRoll());
+        //PMAAT(onDamageFallState, OnFallAndNotDead());
+        //PMAAT(onDeathRollState, OnDeathAndMeleeDamageAndNotDeadOrKnockbackOrRoll());
+        //PMAAT(onDeathFallState, OnDeathAndFallDamageAndNotDead());
+        //PMAAT(onDeathSpikesState, OnDeathAndSpikeDamageAndNotDeadOrKnockbackOrRoll());
         PMAAT(onSpawnInitialIdleState, Reset());
 
 
@@ -176,6 +181,7 @@ public class Player : MonoBehaviour
         //Super State Conditions.
         Func<bool> InAirAndAnimIsCompletedOrAnimIsLooping() => () => !_playerCollisionHandler.DetectGroundContact() && !_playerCollisionHandler.DetectLateGroundContact() && (!AnimatorIsPlaying(0) || AnimLooping(0));
         Func<bool> HitGround() => () => _playerCollisionHandler.DetectGroundContact();
+        Func<bool> HitGroundAndRollCanLand() => () => _playerCollisionHandler.DetectGroundContact() && _canRollLand;
         //OnGround SubState Conditions.
         Func<bool> MoveInput() => () => Mathf.Abs(_playerInputHandler.RawMoveInput) >= 0.2f;
         Func<bool> NoMoveInput() => () => Mathf.Abs(_playerInputHandler.RawMoveInput) < 0.2f;
@@ -196,13 +202,13 @@ public class Player : MonoBehaviour
 
 
         //AnyTransition Conditions.
-        Func<bool> OnGravLiftContactAndCanGravLiftAndNotDeadOrKnockbackOrRoll() => () => _playerDamageAndAffectHandler.GravLiftContact && _canGravLift && !(_playerDamageAndAffectHandler.IsDead || _playerDamageAndAffectHandler.IsKnockedback || _playerDamageAndAffectHandler.IsInRoll);
-        Func<bool> RollTriggerAndNotDeadOrKnockbackOrRoll() => () => _playerDamageAndAffectHandler.InitialRoll && !(_playerDamageAndAffectHandler.IsDead || _playerDamageAndAffectHandler.IsKnockedback||_playerDamageAndAffectHandler.IsInRoll);
+        Func<bool> OnGravLiftContactAndCanGravLiftAndNotDeadOrKnockbackOrRoll() => () => _playerDamageAndAffectHandler.GravLiftContact && _canGravLift && !(_playerDamageAndAffectHandler.IsDead);
+        //Func<bool> RollTriggerAndNotDeadOrKnockbackOrRoll() => () => _playerDamageAndAffectHandler.InitialRoll && !(_playerDamageAndAffectHandler.IsDead || _playerDamageAndAffectHandler.IsKnockedback||_playerDamageAndAffectHandler.IsInRoll);
         Func<bool> OnKnockbackAndNotDeadOrKnockbackOrRoll() => () => _playerDamageAndAffectHandler.InitialKnockback && !(_playerDamageAndAffectHandler.IsDead || _playerDamageAndAffectHandler.IsKnockedback || _playerDamageAndAffectHandler.IsInRoll);
-        Func<bool> OnFallAndNotDead() => () => _playerDamageAndAffectHandler.IsDamaged && _playerDamageAndAffectHandler.DamageType == DamageType.FALL && !(_playerDamageAndAffectHandler.IsDead);
-        Func<bool> OnDeathAndMeleeDamageAndNotDeadOrKnockbackOrRoll() => () => _playerDamageAndAffectHandler.InitialDeath && _playerDamageAndAffectHandler.DamageType == DamageType.ENEMY && !(_playerDamageAndAffectHandler.IsDead || _playerDamageAndAffectHandler.IsKnockedback || _playerDamageAndAffectHandler.IsInRoll);
-        Func<bool> OnDeathAndFallDamageAndNotDead() => () => _playerDamageAndAffectHandler.InitialDeath && _playerDamageAndAffectHandler.DamageType == DamageType.FALL && !(_playerDamageAndAffectHandler.IsDead);
-        Func<bool> OnDeathAndSpikeDamageAndNotDeadOrKnockbackOrRoll() => () => _playerDamageAndAffectHandler.InitialDeath && _playerDamageAndAffectHandler.DamageType == DamageType.SPIKE && !(_playerDamageAndAffectHandler.IsDead || _playerDamageAndAffectHandler.IsKnockedback|| _playerDamageAndAffectHandler.IsInRoll);
+        //Func<bool> OnFallAndNotDead() => () => _playerDamageAndAffectHandler.IsDamaged && _playerDamageAndAffectHandler.DamageType == DamageType.FALL && !(_playerDamageAndAffectHandler.IsDead);
+        //Func<bool> OnDeathAndMeleeDamageAndNotDeadOrKnockbackOrRoll() => () => _playerDamageAndAffectHandler.InitialDeath && _playerDamageAndAffectHandler.DamageType == DamageType.ENEMY && !(_playerDamageAndAffectHandler.IsDead || _playerDamageAndAffectHandler.IsKnockedback || _playerDamageAndAffectHandler.IsInRoll);
+        //Func<bool> OnDeathAndFallDamageAndNotDead() => () => _playerDamageAndAffectHandler.InitialDeath && _playerDamageAndAffectHandler.DamageType == DamageType.FALL && !(_playerDamageAndAffectHandler.IsDead);
+        //Func<bool> OnDeathAndSpikeDamageAndNotDeadOrKnockbackOrRoll() => () => _playerDamageAndAffectHandler.InitialDeath && _playerDamageAndAffectHandler.DamageType == DamageType.SPIKE && !(_playerDamageAndAffectHandler.IsDead || _playerDamageAndAffectHandler.IsKnockedback|| _playerDamageAndAffectHandler.IsInRoll);
         Func<bool> Reset() => () => _setAllStatesInitial;
 
 
@@ -286,6 +292,11 @@ public class Player : MonoBehaviour
     {
         _playerDamageAndAffectHandler.GravLiftContact = false;
         _canGravLift = true;
+    }
+
+    private void WaitToStopRoll()
+    {
+        _canRollLand = true;
     }
 
     private void WaitToSpawn()

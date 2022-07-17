@@ -23,7 +23,7 @@ MonoBehaviour:
   DamageAndAffectHandler_SpawnWait: 1
   EnemyDetectionHandler_Radius: 5
   EnemyDetectionHandler_CheckRate: 0.5
-  OnGroundMove_MoveSpeed: 10
+  OnGroundMove_MoveSpeed: 8
   OnGroundMove_MovementSmoothing: 0.05
   OnGroundJump_JumpForce: 450
   OnGroundJump_JumpWaitTime: 1
@@ -32,16 +32,17 @@ MonoBehaviour:
   OnGroundAttack_KnockbackForce: {x: 400, y: 300}
   OnGroundThoughFloor_ForceDownThroughFloor: 100
   InAirMove_TerminalVelocity: 15
-  InAirMove_MoveSpeed: 10
+  InAirMove_MoveSpeed: 8
   InAirMove_MovementSmoothing: 0.05
   InAirJump_DoubleJumpForce: 600
   InAirJump_DoubleJumpWaitTime: 1
   InAirJump_DoubleJumpCount: 1
   InAirJump_DoubleJumpFXAnim: {fileID: 0}
   InAirOnGravLiftState_WaitBetweenNextGravLift: 0.2
-  OnRollRollState_ForceApplied: {x: 100, y: 100}
+  OnRollRollState_RNGForceApplied: {x: 100, y: 20}
+  OnRollRollState_RNGRollTime: {x: 0.2, y: 3}
   PlayerProjectile_ShotSpawn: {x: 0, y: 0}
-  PlayerProjectile_ProjectileSpeed: 300
+  PlayerProjectile_ProjectileSpeed: 500
   PlayerProjectile_ProjectileDamage: 5
   PlayerProjectile_ProjectileLifetime: 3
   PlayerProjectile_FireRate: 3

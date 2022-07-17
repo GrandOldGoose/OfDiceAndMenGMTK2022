@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        inGameUI.SetActive(false);
+        inGameUI.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
         OnGamePause?.Invoke();
@@ -57,12 +57,6 @@ public class PauseMenu : MonoBehaviour
             GameIsPaused = true;
             OnGamePause?.Invoke();
         }
-    }
-
-    public void LoadMenu()
-    {
-        Resume();
-        MySceneManager.Instance.LoadNewScene(MySceneManager.Instance.MainMenuScene, false, true);
     }
 
     public void QuitGame()

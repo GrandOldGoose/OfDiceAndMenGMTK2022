@@ -64,7 +64,8 @@ public class PlayerProjectile : Projectile
         IDamageable damageable = hitInfo.gameObject.GetComponent<IDamageable>();
         IHittable hittable = hitInfo.gameObject.GetComponent<IHittable>();
 
-        if (hitInfo.gameObject.CompareTag("Enemy")) { if (damageable != null) { damageable.TakeDamage(_playerData.PlayerProjectile_ProjectileDamage, DamageType.PLAYER_PROJECTILE); DisableBullet(); } }
+        if (hitInfo.gameObject.CompareTag("Enemy")) { if (damageable != null) { damageable.TakeDamage(_playerData.PlayerProjectile_ProjectileDamage, DamageType.PLAYER_PROJECTILE); } DisableBullet(); }
+        else if (hitInfo.gameObject.CompareTag("EnemyProjectile")) { if (damageable != null) {damageable.TakeDamage(_playerData.PlayerProjectile_ProjectileDamage, DamageType.PLAYER_PROJECTILE); } DisableBullet(); }
         if (hittable != null) { DisableBullet(); }
     }
     #endregion

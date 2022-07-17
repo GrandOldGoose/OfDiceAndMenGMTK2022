@@ -12,6 +12,7 @@ TagManager:
   - EnemyDetecionCollider
   - Enemy
   - PlayerHitBox
+  - LoadSceneTrigger
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - PlayerHitBox
   - EnemyDetecionCollider
   - Enemy
-  - 
+  - LoadSceneTrigger
   - 
   - 
   - 

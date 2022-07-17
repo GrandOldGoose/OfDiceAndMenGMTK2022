@@ -2,34 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UI_HighScore : MonoBehaviour
 {
 
     ////////////SerializeField Var Defs:
-    [SerializeField] private Text textUI;
+    [SerializeField] private TMP_Text textUI;
 
 
 
 
     ////////////Private Var Defs:
-    private int currentScore = 0;
-
-
-
-
-    ////////////Unity Functions:
-    private void Update()
-    {
-        UpdateScoreUI();
-    }
+    private float currentScore = 0;
 
 
 
     ////////////private Functions:
-    private void UpdateScoreUI()
+    public void UpdateScoreUI(float newBestHeight)
     {
-        currentScore = GameManager.Instance.HighScore.CurrentScore;
+        currentScore = newBestHeight;
         textUI.text = currentScore.ToString();
     }
 

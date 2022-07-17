@@ -117,10 +117,13 @@ public class PlayerDamageAndAffectHandler : MonoBehaviour, IRespawnable, IDamage
             _isDamaged = true;
 
             //Take Damage.
+            /*
             _currentHealth -= damageAmount;
             _playerUIHandler.SetUIHealth(_currentHealth);
+            */
 
             //Death Stuff
+            /*
             if (_currentHealth <= 0)
             {
                 //hes dead Jim.
@@ -128,6 +131,7 @@ public class PlayerDamageAndAffectHandler : MonoBehaviour, IRespawnable, IDamage
 
                 this.gameObject.SetActive(false);
             }
+            */
         }
     }
 

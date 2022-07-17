@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6308909757055827045}
   - component: {fileID: 4703567773010256050}
   - component: {fileID: 3857426413689715682}
+  - component: {fileID: 7925321138920749738}
   m_Layer: 0
   m_Name: HazardProjectileLauncher
   m_TagString: Untagged
@@ -78,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e334ed30afd8b340909fc3a381730c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 7925321138920749738}
   _projectileSpawner: {fileID: 3857426413689715682}
   _timeBeforeFirstProjectile: 1
   _timeBetweenProjectiles: 2
@@ -95,6 +97,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectilePrefab: {fileID: 2177111023925885070, guid: 3a1961b0ca6ae724993295992b2715df, type: 3}
   _projectileSpawn: {fileID: 3798998334253768448}
+--- !u!95 &7925321138920749738
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530720860991993135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23b5b23f478346346a528c3d934a54db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5581270911601673406
 GameObject:
   m_ObjectHideFlags: 0

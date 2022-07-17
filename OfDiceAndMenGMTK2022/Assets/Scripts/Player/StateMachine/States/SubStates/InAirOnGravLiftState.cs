@@ -60,6 +60,7 @@ namespace PlayerStateMachineNamespace
         public override void OnEnter()
         {
             base.OnEnter();
+            _player.DoubleJumpCount = _playerData.InAirJump_DoubleJumpCount;
             _player.CanGravLift = false;
             AddForceToPlayer();
         }
