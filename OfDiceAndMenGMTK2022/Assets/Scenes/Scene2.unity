@@ -158,7 +158,7 @@ PrefabInstance:
     - target: {fileID: 3857426413689715682, guid: bb07e9b5cdbaeaa4b9ca3327510c4f45, type: 3}
       propertyPath: _projectilePrefab
       value: 
-      objectReference: {fileID: 2177111023925885070, guid: 74af98377d4d9d04798fd38a38bc15b2, type: 3}
+      objectReference: {fileID: 2177111023925885070, guid: 7827a299badfa064896b8a4a9278cc9a, type: 3}
     - target: {fileID: 4530720860991993135, guid: bb07e9b5cdbaeaa4b9ca3327510c4f45, type: 3}
       propertyPath: m_Name
       value: HazardProjectileLauncher (1)
@@ -579,7 +579,7 @@ PrefabInstance:
     - target: {fileID: 3857426413689715682, guid: bb07e9b5cdbaeaa4b9ca3327510c4f45, type: 3}
       propertyPath: _projectilePrefab
       value: 
-      objectReference: {fileID: 2177111023925885070, guid: 74af98377d4d9d04798fd38a38bc15b2, type: 3}
+      objectReference: {fileID: 2177111023925885070, guid: 7827a299badfa064896b8a4a9278cc9a, type: 3}
     - target: {fileID: 4530720860991993135, guid: bb07e9b5cdbaeaa4b9ca3327510c4f45, type: 3}
       propertyPath: m_Name
       value: HazardProjectileLauncher
@@ -688,7 +688,7 @@ PrefabInstance:
     - target: {fileID: 3857426413689715682, guid: bb07e9b5cdbaeaa4b9ca3327510c4f45, type: 3}
       propertyPath: _projectilePrefab
       value: 
-      objectReference: {fileID: 2177111023925885070, guid: 74af98377d4d9d04798fd38a38bc15b2, type: 3}
+      objectReference: {fileID: 2177111023925885070, guid: 7827a299badfa064896b8a4a9278cc9a, type: 3}
     - target: {fileID: 4530720860991993135, guid: bb07e9b5cdbaeaa4b9ca3327510c4f45, type: 3}
       propertyPath: m_Name
       value: HazardProjectileLauncher (3)
@@ -11408,7 +11408,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6248132, y: 1}
+    m_SensorSize: {x: 2.0432332, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -88103,7 +88103,7 @@ PrefabInstance:
     - target: {fileID: 3857426413689715682, guid: bb07e9b5cdbaeaa4b9ca3327510c4f45, type: 3}
       propertyPath: _projectilePrefab
       value: 
-      objectReference: {fileID: 2177111023925885070, guid: 74af98377d4d9d04798fd38a38bc15b2, type: 3}
+      objectReference: {fileID: 2177111023925885070, guid: 7827a299badfa064896b8a4a9278cc9a, type: 3}
     - target: {fileID: 4530720860991993135, guid: bb07e9b5cdbaeaa4b9ca3327510c4f45, type: 3}
       propertyPath: m_Name
       value: HazardProjectileLauncher (2)
