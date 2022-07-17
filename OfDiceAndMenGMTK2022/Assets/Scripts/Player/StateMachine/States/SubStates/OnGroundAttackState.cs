@@ -55,6 +55,10 @@ namespace PlayerStateMachineNamespace
             base.OnEnter();
 
             _playerProjectileSpawner.PlayerProjectilePool.Get();
+
+            if (_player.FacingRight) { _rigidbody2D.AddForce(new Vector2(-_playerData.OnGroundAttack_KnockbackForce.x, _playerData.OnGroundAttack_KnockbackForce.y)); }
+            else { _rigidbody2D.AddForce(new Vector2(_playerData.OnGroundAttack_KnockbackForce.x, _playerData.OnGroundAttack_KnockbackForce.y)); }
+
         }
 
         public override void OnExit()

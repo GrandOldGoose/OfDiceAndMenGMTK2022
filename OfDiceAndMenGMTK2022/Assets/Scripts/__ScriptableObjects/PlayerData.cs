@@ -44,6 +44,10 @@ public class PlayerData : ScriptableObject
 	public float OnGroundJump_MovingPlatformScaleCoeffient = 1f;
 	public GameObject OnGroundJump_JumpFXAnim;
 
+	[Header("OnGroundAttackState")]
+	[Space]
+	public Vector2 OnGroundAttack_KnockbackForce = new Vector2(500f, 500f);
+
 	[Header("OnGroundThroughFloorState")]
 	[Space]
 	public float OnGroundThoughFloor_ForceDownThroughFloor = 100f;

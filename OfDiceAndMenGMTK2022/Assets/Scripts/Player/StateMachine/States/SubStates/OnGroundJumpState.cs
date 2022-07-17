@@ -60,6 +60,7 @@ namespace PlayerStateMachineNamespace
             if (rayHit)
             {
                 //check for moving ground
+                /*
                 if (rayHit.transform.gameObject.layer == 9)
                 {
                     if (_playerData.OnGroundJump_JumpFXAnim != null)
@@ -82,15 +83,17 @@ namespace PlayerStateMachineNamespace
                 }
                 else
                 {
+                    */
                     if (_playerData.OnGroundJump_JumpFXAnim != null) { _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f)); }
 
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0.0f);
                     Jump();
-                }
+                //}
             }
             else if (rayHitLate)
             {
                 //check for moving ground
+                /*
                 if (rayHitLate.transform.gameObject.layer == 9)
                 {
                     if (_playerData.OnGroundJump_JumpFXAnim != null)
@@ -113,11 +116,12 @@ namespace PlayerStateMachineNamespace
                 }
                 else
                 {
+                */
                     if (_playerData.OnGroundJump_JumpFXAnim != null) { _player.InstantiateObject(_playerData.OnGroundJump_JumpFXAnim, _player.transform.position - new Vector3(0f, 4f, 0f), Quaternion.Euler(0f, 0f, 90f)); }
 
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0.0f);
                     Jump();
-                }
+                //}
             }
         }
 

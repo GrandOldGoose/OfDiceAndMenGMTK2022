@@ -1,0 +1,732 @@
+fileFormatVersion: 2
+guid: 22c18c855f35abe489b22ebf300ecf66
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 240
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be4ebaafa4acd847a06dda4eb50930a
+      internalID: 920594690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 840
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a5a3c1153340d4e845b8ef36f2ab5b
+      internalID: -42058473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_3
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 840
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfeb596650dbb5b44a125da239eb5e57
+      internalID: 950203854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_4
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 840
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e04d6d111df8e247bf4073da74300f9
+      internalID: -500895026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_5
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 840
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d23ac16f1c5054998206a090130d1d
+      internalID: 272942771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_6
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 840
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c088d68b7cada754ba8e429266c7ef4c
+      internalID: 1049617474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_7
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 840
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115d5598c606b9b4494c08793b73f20e
+      internalID: 1065197414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80be8190619875848a9daee9c17014aa
+      internalID: -831912854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_9
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 600
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a534134d7c5d1a741a1c8c86d12a28c7
+      internalID: -984005971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_11
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 600
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475190e5c19ed244baf8f2e3fbf97711
+      internalID: 1984185000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 600
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76be0d799033c094483ff72284faf848
+      internalID: 1435897214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_13
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 600
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a04f35e59778ab4da7a33670a620a08
+      internalID: -1849601846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_14
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 600
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af8a2acf156f6544b67580b676496d1
+      internalID: 1346593197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85493ff80ad4d59448623ec099debdf0
+      internalID: -165956395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_16
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 360
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7d596cbd4c55b41a8ba21e82f46461
+      internalID: 1983301400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_17
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 360
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5a3b1ba9078c240b772860c6beac87
+      internalID: -1943426923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_18
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 360
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81270a1afd22fc14489b395f85a5fdf1
+      internalID: -2095776661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_19
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 360
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9365d3085268ccc429c25090517ee49a
+      internalID: 17260479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_20
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 360
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c6834e79d458b4aae6b8190f4b22a8
+      internalID: -146113877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_21
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 360
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f306d8c36c65449b506fd052b16a30
+      internalID: -1180411191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_22
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 360
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d70f8cd94513342b8d84db5ddb3339
+      internalID: -2137231798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_25
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 120
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eacf438c3c425cb4cabdfa3608600161
+      internalID: -18309607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_26
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 120
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a049b83ef879d684c88f58489d0c7b8b
+      internalID: 1940926264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_27
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 120
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4047ab717ace8e49aebe3206a8d4896
+      internalID: -1750531860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_28
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 120
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abadda51918c75c4baf9002ef1b680bb
+      internalID: 249952875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_29
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 120
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d15b7e5dd580df44bb65568637ad98a
+      internalID: -856932731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OfDiceAndMenGMTK2022_TileMapSpriteSheet2_30
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 120
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81b178dc448fb24a9c5e68441698b49
+      internalID: 1604427286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_12: 1435897214
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_13: -1849601846
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_21: -1180411191
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_0: 920594690
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_7: 1065197414
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_11: 1984185000
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_10: -1389696754
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_28: 249952875
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_6: 1049617474
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_25: -18309607
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_27: -1750531860
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_1: -42058473
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_23: -1498226102
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_17: -1943426923
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_20: -146113877
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_2: 1138904819
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_8: -831912854
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_24: -1821911974
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_3: 950203854
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_4: -500895026
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_22: -2137231798
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_30: 1604427286
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_15: -165956395
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_19: 17260479
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_5: 272942771
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_9: -984005971
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_16: 1983301400
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_14: 1346593197
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_18: -2095776661
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_26: 1940926264
+      OfDiceAndMenGMTK2022_TileMapSpriteSheet2_29: -856932731
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

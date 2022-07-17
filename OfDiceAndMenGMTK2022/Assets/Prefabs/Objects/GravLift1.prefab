@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5818303045060385047}
   - component: {fileID: 1413605015026250567}
   m_Layer: 0
-  m_Name: GravLift
+  m_Name: GravLift1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 291905853, guid: e5ee240d41b011b4e9e161c92f525636, type: 3}
-  m_Color: {r: 0.27058825, g: 0.09411765, b: 0.25490198, a: 1}
+  m_Sprite: {fileID: -1264214104, guid: ddfea372471917843a4ead41f6a6e6cc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

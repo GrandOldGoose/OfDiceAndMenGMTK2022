@@ -60,13 +60,14 @@ namespace PlayerStateMachineNamespace
         public override void OnEnter()
         {
             base.OnEnter();
+            _player.CanGravLift = false;
             AddForceToPlayer();
         }
 
         public override void OnExit()
         {
             base.OnExit();
-            _player.CanGravLift = false;
+
             OnMovementObjectGravLiftExit.Invoke();
         }
         #endregion

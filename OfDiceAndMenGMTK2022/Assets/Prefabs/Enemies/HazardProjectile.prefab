@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 6172136457062061901}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8778055585141533949
 Rigidbody2D:
@@ -91,7 +91,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.2
 --- !u!114 &2177111023925885070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,10 +104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d51e0a1c006afd4a87f19d3170f3424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileSpeed: 1000
+  _projectileSpeed: 200
   _projectileLifeTime: 2
   _projectileDamage: 1
-  _knockbackForce: 3500
+  _knockbackForce: 700
   _projectileRigidbody: {fileID: 8778055585141533949}
   _projectileCollider: {fileID: 1544857406931571024}
   _instanceEffect: {fileID: 0}
@@ -158,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 1758201990423252207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4451886494105409782}

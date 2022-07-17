@@ -146,6 +146,7 @@ public class Player : MonoBehaviour
         PMAT(onGroundLandState, onGroundMoveState, AnimCompletedAndMoveInput());
         PMAT(onGroundLandState, onGroundAttackState, FireInput());
         PMAT(onGroundJumpState, inAirMoveState, AnimCompleted());
+        PMAT(onGroundAttackState, inAirMoveState, AnimCompleted());
         PMAT(onGroundThroughFloorState, inAirMoveState, AnimCompleted());
         //InAir SubState Transitions.
         PMAT(inAirMoveState, inAirJumpState, JumpInputAndCanDoubleJump());
