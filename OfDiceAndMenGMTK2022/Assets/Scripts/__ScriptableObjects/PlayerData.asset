@@ -39,7 +39,7 @@ MonoBehaviour:
   InAirJump_DoubleJumpCount: 1
   InAirJump_DoubleJumpFXAnim: {fileID: 0}
   InAirOnGravLiftState_WaitBetweenNextGravLift: 0.2
-  OnRollRollState_RNGForceApplied: {x: 100, y: 20}
+  OnRollRollState_RNGForceApplied: {x: 150, y: 20}
   OnRollRollState_RNGRollTime: {x: 0.2, y: 3}
   PlayerProjectile_ShotSpawn: {x: 0, y: 0}
   PlayerProjectile_ProjectileSpeed: 500
