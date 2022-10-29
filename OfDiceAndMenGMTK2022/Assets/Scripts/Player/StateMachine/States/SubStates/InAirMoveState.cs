@@ -50,6 +50,7 @@ namespace PlayerStateMachineNamespace
         {
             base.PhysicsUpdate();
             Move();
+            if(_rigidbody2D.velocity.y < -_playerData.InAirMove_TerminalVelocity) { _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, -_playerData.InAirMove_TerminalVelocity + 1) ; }
         }
 
         public override void OnEnter()

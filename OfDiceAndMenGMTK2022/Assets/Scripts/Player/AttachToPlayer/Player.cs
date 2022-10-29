@@ -151,12 +151,14 @@ public class Player : MonoBehaviour
         PMAT(onGroundLandState, onGroundMoveState, AnimCompletedAndMoveInput());
         PMAT(onGroundLandState, onGroundAttackState, FireInput());
         PMAT(onGroundJumpState, inAirMoveState, AnimCompleted());
+        PMAT(onGroundJumpState, inAirJumpState, AnimCompletedAndJumpInput());
         PMAT(onGroundAttackState, inAirMoveState, AnimCompleted());
         PMAT(onGroundThroughFloorState, inAirMoveState, AnimCompleted());
         //InAir SubState Transitions.
         PMAT(inAirMoveState, inAirJumpState, JumpInputAndCanDoubleJump());
         PMAT(inAirJumpState, inAirMoveState, AnimCompleted());
         PMAT(inAirOnGravLiftState, inAirMoveState, AnimCompleted());
+        PMAT(inAirOnGravLiftState, inAirJumpState, AnimCompletedAndJumpInput());
         //OnDamage Substate Transitions.
         PMAT(onDamageFallState, onSpawnWaitState, AnimCompleted());
         PMAT(onDamageRollState, onGroundIdleState, AnimCompleted());
@@ -187,8 +189,10 @@ public class Player : MonoBehaviour
         Func<bool> NoMoveInput() => () => Mathf.Abs(_playerInputHandler.RawMoveInput) < 0.2f;
         Func<bool> JumpInput() => () => _playerInputHandler.JumpInput;
         Func<bool> FireInput() => () => _playerInputHandler.FireInput;
-        Func<bool> AnimCompletedAndNoMoveInput() => () => !AnimatorIsPlaying(0) && Mathf.Abs(_playerInputHandler.RawMoveInput) < 0.2f;
-        Func<bool> AnimCompletedAndMoveInput() => () => !AnimatorIsPlaying(0) && Mathf.Abs(_playerInputHandler.RawMoveInput) >= 0.2f;
+        Func<bool> AnimCompletedAndNoMoveInput() => () => !AnimatorIsPlaying(0) && Mathf.Abs(_playerInputHandler.RawMoveInput) < 0.01f;
+        Func<bool> AnimCompletedAndMoveInput() => () => !AnimatorIsPlaying(0) && Mathf.Abs(_playerInputHandler.RawMoveInput) >= 0.01f;
+        Func<bool> AnimCompletedAndJumpInput() => () => !AnimatorIsPlaying(0) && _playerInputHandler.JumpInput;
+        
         Func<bool> ThroughFloorInputAndOnSlimGround() => () => _playerInputHandler.FallThroughFloorInput && _playerCollisionHandler.DetectSlimGroundContact();
         //InAir SubState Conditions.
         Func<bool> JumpInputAndCanDoubleJump() => () => _playerInputHandler.JumpInput && _doubleJumpCount > 0;

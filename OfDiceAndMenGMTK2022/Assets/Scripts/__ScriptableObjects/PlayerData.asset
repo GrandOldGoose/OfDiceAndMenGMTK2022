@@ -31,7 +31,7 @@ MonoBehaviour:
   OnGroundJump_JumpFXAnim: {fileID: 0}
   OnGroundAttack_KnockbackForce: {x: 400, y: 300}
   OnGroundThoughFloor_ForceDownThroughFloor: 100
-  InAirMove_TerminalVelocity: 15
+  InAirMove_TerminalVelocity: 24
   InAirMove_MoveSpeed: 8
   InAirMove_MovementSmoothing: 0.05
   InAirJump_DoubleJumpForce: 600
